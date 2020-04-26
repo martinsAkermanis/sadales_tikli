@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>DevOps mājas darbs</title>
+</head>
+<body>
+<center>
+    <div class="jumbotron" style="margin-top: 50px; width: 70%">
+        <h1>Sadales tīkli <i>DevOps</i> mājas darbs</h1>
+        <p class="lead">1. uzdevuma atrisinājums</p>
+        <hr class="my-4">
+        <h5 style="margin-top: 25px">Atlasīt skaitītāju sērijas numurus (MSNO) el. skaitītājiem, kuri ir aktīvi, bet
+            kuri
+            nav piesaistīti
+            pie datu koncentratora</h5>
+        <p style="margin-top: 25px">SELECT *</p>
+        <p>FROM METER_A</p>
+            WHERE STATUS = 3 AND TML_ID IS NULL;
+        </p>
+        <div class="dropdown" style="margin-top: 25px">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Pārējie uzdevumi
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="http://localhost:5000/1_uzdevums">1. uzdevums</a>
+                <a class="dropdown-item" href="http://localhost:5000/2_uzdevums">2. uzdevums</a>
+                <a class="dropdown-item" href="http://localhost:5000/3_uzdevums">3. uzdevums</a>
+                <a class="dropdown-item" href="http://localhost:5000/4_uzdevums">4. uzdevums</a>
+                <a class="dropdown-item" href="http://localhost:5000/5_uzdevums">5. uzdevums</a>
+            </div>
+        </div>
+    </div>
+<table class="table" style="margin-top: 50px; width: 90%">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">MSNO</th>
+        <th scope="col">STATUS</th>
+        <th scope="col">TML_ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in results %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</center>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
